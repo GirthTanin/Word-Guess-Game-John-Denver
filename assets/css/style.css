@@ -1,0 +1,27 @@
+body {
+    background-image: url(../images/john-denver-sun-soaked-aspens.jpg)
+}
+
+#wrapper {
+    width: 680px;
+    height: 500px;
+    margin: 120 400 180 450;
+    padding: 10px;
+    background-color: black;
+    border: 5px solid black;
+
+}
+
+#welcome {
+    color: cornsilk;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+}
+
+#start {
+    color: cornsilk;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+}
