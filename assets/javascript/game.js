@@ -62,7 +62,7 @@ function start() {
     begin.style.display = "none";
     }
 
-    songChoice = songTitles[Math.floor(Math.random() * songTitles.length)];
+    songChoice = songTitles[Math.floor(Math.random()*songTitles.length)];
     console.log("song title is chosen");
 
     lettersSongChoice = songChoice.split("");
@@ -147,27 +147,27 @@ document.onkeyup = function(event) {
 
 
 // This code below I may have incorporated already in the top...
-document.onkeyup = function(start) {
-    var begin = document.getElementById("start");
-    if (begin.style.display === "block") {
-    begin.style.display = "none";
-    } 
-    if (begin.style.display = "none") {
-    document.getElementById("directions"); directions.style.display = "block";
-    }
-}
+// document.onkeyup = function(start) {
+//     var begin = document.getElementById("start");
+//     if (begin.style.display === "block") {
+//     begin.style.display = "none";
+//     } 
+//     if (begin.style.display = "none") {
+//     document.getElementById("directions"); directions.style.display = "block";
+//     }
+// }
 
-document.onkeyup = function (event) {}
+// document.onkeyup = function (event) {}
 
 // This next section is to have a song title chosen when the first key is pressed.
 
-document.onkeyup = function(event) {
-    songChoice = songTitles[Math.floor(Math.random() * songTitles.length)];
-}
+// document.onkeyup = function(event) {
+//     songChoice = songTitles[Math.floor(Math.random() * songTitles.length)];
+// }
 
-if (start.display === "none") {
-document.writeln(directions);
-}
+// if (start.display === "none") {
+// document.writeln(directions);
+// }
 
 
 // when the user guesses a letter..I'll need this and more code.
