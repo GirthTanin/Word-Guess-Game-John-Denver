@@ -4,11 +4,11 @@ body {
 
 #wrapper {
     width: 680px;
-    height: 500px;
+    height: 555px;
     margin: 120 400 180 450;
     padding: 10px;
     background-color: black;
-    border: 5px solid black;
+    border: 5px solid red;
 
 }
 
@@ -24,6 +24,60 @@ body {
     font-size: 26px;
     text-align: center;
     line-height: 50px;
+}
+
+#directions {
+    display: block;
+    color: cornsilk;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    border: 5px solid purple;
+}
+
+#blankTitle {
+    display: block;
+    color: cornsilk;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    border: 5px solid green;
+}
+
+#triesLeft {
+    display: block;
+    color: cornsilk;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    border: 5px solid orange;
+}
+
+#lettersNotInTitle {
+    display: block;
+    color: cornsilk;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    border: 5px solid yellow;
+}
+
+#titlesDeduced {
+    display: block;
+    color: cornsilk;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    border: 5px solid white;
+}
+
+#titlesUnknown {
+    display: block;
+    color: cornsilk;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    border: 5px solid rgb(34, 7, 133);
 }
 
 #music {
