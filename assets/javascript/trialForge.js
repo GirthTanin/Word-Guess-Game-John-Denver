@@ -27,7 +27,6 @@ var songTitles = [
     "Today",
     "Boy from the Country"];
 
-    
 // From day 1 of the 05-timers I found a logic.js that helped me see MANY steps I didn't see.
 var spaceBegin ="";
 var songChoice ="";
@@ -41,19 +40,10 @@ var wrongLetters = [];
 var lettersGuessed = "";
 var titlesCorrect = 0;
 var titlesMissed = 0;
-// here is where i fake a var to find out what song the JS chose
-var songCheat=songChoice;
 
 console.log("Hey, you got the page attached!");
 
-
-// I want the "Press any key to start" to change the display when a "key" is pressed.
-// This function is run whenever the user presses a key.  It used to work, but when I added the code starting at line 17, it no longer does anything.
-
-function start() {
-    
-    // this should bring the score for letters chosen back to zero
-    letterAttempts = 10;
+letterAttempts = 10;
     console.log("letters chosen back to zero");
 
 
@@ -62,6 +52,7 @@ function start() {
     begin.style.display = "none";
     }
 
+
     songChoice = songTitles[Math.floor(Math.random() * songTitles.length)];
     console.log("song title is chosen");
 
@@ -69,6 +60,9 @@ function start() {
     console.log("title is split up into its parts");
 
     lettersEmpty = lettersSongChoice.length;
+
+// here is where i fake a var to find out what song the JS chose
+var songCheat=songChoice;
 
     // this var will need to reset each round, I'm not sure why it's stated outside and also in the function
     blanksAndSuccesses = [];
@@ -87,7 +81,7 @@ document.getElementById("lettersNotInTitle").innerHTML = wrongLetters.join(" ");
 
 document.getElementById("blankTitle").innerHTML=blanksAndSuccesses.join(" ");
 
-}
+
 
 function letterPresent(letter) {
     var letterInTitle = false;
@@ -146,28 +140,3 @@ document.onkeyup = function(event) {
 
 
 
-// This code below I may have incorporated already in the top...
-document.onkeyup = function(start) {
-    var begin = document.getElementById("start");
-    if (begin.style.display === "block") {
-    begin.style.display = "none";
-    } 
-    if (begin.style.display = "none") {
-    document.getElementById("directions"); directions.style.display = "block";
-    }
-}
-
-document.onkeyup = function (event) {}
-
-// This next section is to have a song title chosen when the first key is pressed.
-
-document.onkeyup = function(event) {
-    songChoice = songTitles[Math.floor(Math.random() * songTitles.length)];
-}
-
-if (start.display === "none") {
-document.writeln(directions);
-}
-
-
-// when the user guesses a letter..I'll need this and more code.
