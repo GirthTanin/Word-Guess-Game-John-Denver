@@ -161,8 +161,8 @@ function goodTry() {
 
 start();
 // perhaps onmouseover??? or onclick of #start
-document.getElementById("start").onclick = function (event) {
-// document.onkeyup = function(event) {
+// document.getElementById("start").onclick = function (event) {
+document.onkeyup = function(event) {
     lettersGuessed = String.fromCharCode(event.which).toLowerCase();
     letterPresent(lettersGuessed);
     var begin = document.getElementById("start");

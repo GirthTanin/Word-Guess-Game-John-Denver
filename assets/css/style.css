@@ -57,6 +57,7 @@ body {
 
 #lettersNotInTitle {
     display: block;
+    height: 50px;
     color: cornsilk;
     font-size: 26px;
     text-align: center;
