@@ -60,6 +60,7 @@ function start() {
     var begin = document.getElementById("start");
     if (begin.style.display === "block") {
     begin.style.display = "none";
+    console.log("It's Magic!");
     }
 
     songChoice = songTitles[Math.floor(Math.random()*songTitles.length)];
@@ -69,11 +70,14 @@ function start() {
     console.log("title is split up into its parts");
 
     lettersEmpty = lettersSongChoice.length;
+    console.log("lettersEmpty");
 
     // this var will need to reset each round, I'm not sure why it's stated outside and also in the function
     blanksAndSuccesses = [];
+    console.log("blanksAndSuccesses inner restating");
 
     wrongLetters = [];
+    console.log("wrongLetters inner restating");
 
     for (var i=0; i<lettersEmpty; i++) {
         blanksAndSuccesses.push ("_");
@@ -117,8 +121,10 @@ function goodTry() {
     document.getElementById("triesLeft").innerHTML = letterAttempts;
 
     document.getElementById("lettersNotInTitle").innerHTML = wrongLetters.join(" ");
+    console.log ("You didn't guess the right letter.")
 
     document.getElementById("blankTitle").innerHTML=blanksAndSuccesses.join(" ");
+    console.log ("You guessed a letter in the title!");
 
     if (lettersSongChoice.toString()===blanksAndSuccesses.toString()) {
         titlesCorrect++;
