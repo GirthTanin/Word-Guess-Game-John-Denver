@@ -4,7 +4,8 @@ body {
 
 #wrapper {
     width: 680px;
-    height: 555px;
+    /* height: 555px; */
+    height: 525px;
     margin: 120 400 180 450;
     padding: 10px;
     background-color: black;
@@ -28,7 +29,7 @@ body {
 }
 
 #directions {
-    display: block;
+    display: none;
     color: cornsilk;
     font-size: 18px;
     text-align: center;
@@ -46,7 +47,7 @@ body {
 }
 
 #triesLeft {
-    display: block;
+    
     color: cornsilk;
     font-size: 26px;
     text-align: center;

@@ -36,13 +36,14 @@ var titleCompleted = false;
 var lettersSongChoice =[];
 var lettersEmpty = 0;
 var blanksAndSuccesses = [];
-var letterAttempts = 10;
+var letterAttempts = 11;
 var wrongLetters = [];
 var lettersGuessed = "";
 var titlesCorrect = 0;
 var titlesMissed = 0;
-// here is where i fake a var to find out what song the JS chose
-var songCheat=songChoice;
+var titlesUnknown = 26;
+
+
 
 console.log("Hey, you got the page attached!");
 
@@ -53,7 +54,7 @@ console.log("Hey, you got the page attached!");
 function start() {
     
     // this should bring the score for letters chosen back to zero
-    letterAttempts = 10;
+    letterAttempts = 11;
     console.log("letters chosen back to zero");
 
 
@@ -63,8 +64,13 @@ function start() {
     console.log("It's Magic!");
     }
 
-    songChoice = songTitles[Math.floor(Math.random()*songTitles.length)];
+    songChoice = songTitles[Math.floor(Math.random()*songTitles.length)].toLowerCase();
+
+    //just above I learned to make all the titles lowercase, but now I can't make sense of them.  Does it have to spit back the lowercase array, or can it kick back to the original title, and what to do about these spaces... idea, do I need to end the "Welcome"&nbsp;"to"&nbsp:"my"&nbsp"morning"?
+
     console.log("song title is chosen");
+
+    songChoiceLowerCase = songChoice.toLowerCase();
 
     lettersSongChoice = songChoice.split("");
     console.log("title is split up into its parts");
@@ -91,6 +97,10 @@ document.getElementById("lettersNotInTitle").innerHTML = wrongLetters.join(" ");
 
 document.getElementById("blankTitle").innerHTML=blanksAndSuccesses.join(" ");
 
+
+    function newFunction() {
+        songChoice.toLowerCase();
+    }
 }
 
 function letterPresent(letter) {
@@ -133,8 +143,11 @@ function goodTry() {
         titlesCorrect++;
         alert("You're a John Denver fan!")
         document.getElementById("titlesDeduced").innerHTML = titlesCorrect;
+        document.getElementById("titlesUnknown").innerHTML = --titlesUnknown + (" Titles Unknown!");
         start();
     }
+
+    // something here isn't working.
     else if (letterAttempts === 0) {
         titlesMissed++;
         alert("Keep trying! You won't regret learning these!")
@@ -147,10 +160,20 @@ function goodTry() {
 // This is where everything is controlled and started...
 
 start();
-
-document.onkeyup = function(event) {
+// perhaps onmouseover??? or onclick of #start
+document.getElementById("start").onclick = function (event) {
+// document.onkeyup = function(event) {
     lettersGuessed = String.fromCharCode(event.which).toLowerCase();
     letterPresent(lettersGuessed);
+    var begin = document.getElementById("start");
+    if (begin.style.display === "block") {
+    begin.style.display = "none";
+    } 
+    if (begin.style.display = "none") {
+    document.getElementById("directions"); directions.style.display = "block";
+        
+    }
+
     goodTry ();
 }
 
