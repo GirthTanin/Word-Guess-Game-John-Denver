@@ -36,7 +36,7 @@ var titleCompleted = false;
 var lettersSongChoice =[];
 var lettersEmpty = 0;
 var blanksAndSuccesses = [];
-var letterAttempts = 0;
+var letterAttempts = 10;
 var wrongLetters = [];
 var lettersGuessed = "";
 var titlesCorrect = 0;
@@ -95,22 +95,25 @@ document.getElementById("blankTitle").innerHTML=blanksAndSuccesses.join(" ");
 
 function letterPresent(letter) {
     var letterInTitle = false;
+
     for (var i = 0; i < lettersEmpty; i++) {
         if (songChoice[i] === letter) {
             letterInTitle = true;
         }
     }
-        if (letterInTitle === true) {
-            for (var x = 0; x < lettersEmpty; x++); {
-                if (songChoice[x] === letter) {
-                    blanksAndSuccesses[x] = letter;
+        if (letterInTitle) {
+            for (var d = 0; d < lettersEmpty; d++) {
+                if (songChoice[d] === letter) {
+                    blanksAndSuccesses[d] = letter;
                 }
             }
+            console.log ("You guessed a letter in the title!");
             console.log (blanksAndSuccesses);
         }
         else {
             wrongLetters.push(letter);
             letterAttempts--;
+            console.log ("You didn't guess the right letter.");
         }
         console.log("letterPresent actually worked");
 
@@ -121,18 +124,20 @@ function goodTry() {
     document.getElementById("triesLeft").innerHTML = letterAttempts;
 
     document.getElementById("lettersNotInTitle").innerHTML = wrongLetters.join(" ");
-    console.log ("You didn't guess the right letter.")
+    
 
     document.getElementById("blankTitle").innerHTML=blanksAndSuccesses.join(" ");
-    console.log ("You guessed a letter in the title!");
+    
 
     if (lettersSongChoice.toString()===blanksAndSuccesses.toString()) {
         titlesCorrect++;
+        alert("You're a John Denver fan!")
         document.getElementById("titlesDeduced").innerHTML = titlesCorrect;
         start();
     }
     else if (letterAttempts === 0) {
         titlesMissed++;
+        alert("Keep trying! You won't regret learning these!")
         document.getElementById("titlesMissed").innerHTML = titlesMissed;
         start();
     }
@@ -141,10 +146,10 @@ function goodTry() {
 
 // This is where everything is controlled and started...
 
-start ();
+start();
 
 document.onkeyup = function(event) {
-    letterGuessed = String.fromCharCode(event.which).toLowerCase();
+    lettersGuessed = String.fromCharCode(event.which).toLowerCase();
     letterPresent(lettersGuessed);
     goodTry ();
 }
