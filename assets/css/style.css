@@ -74,6 +74,15 @@ body {
     border: 5px solid white;
 }
 
+#titlesMissed {
+    display: none;
+    color: cornsilk;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+    border: 5px solid white;
+}
+
 #titlesUnknown {
     display: block;
     color: cornsilk;
