@@ -5,8 +5,8 @@ body {
 #wrapper {
     width: 680px;
     /* height: 555px; */
-    height: 525px;
-    margin: 120 400 180 450;
+    height: 550px;
+    margin: 80 400 10 450;
     padding: 10px;
     background-color: black;
     border: 5px solid red;
@@ -93,8 +93,7 @@ body {
 }
 
 #music {
-    
-    margin: auto; 
-    padding: 10% 0 10% 0;
+    width: 680px;
+    margin: 20 400 20 450; 
     text-align: center;
 }

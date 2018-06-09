@@ -1,4 +1,13 @@
-// imitating the gandalf thing, day 3, exercise 30, can I make a searchabel array of strings, that need to operate as arrays to search for each letter?
+//this bit of code will STOP the spacebar from scrolling and will allow for it to be used in the word game.
+window.onkeydown = function(e) {
+    if(e.keyCode == 32 && e.target == document.body) {
+        e.preventDefault();
+        return false;
+    }
+};
+
+
+
 var songTitles = [
     "Fly Away",
     "The Eagle and the Hawk",
@@ -179,31 +188,3 @@ document.onkeyup = function(event) {
     goodTry ();
 }
 
-
-
-
-// This code below I may have incorporated already in the top...
-// document.onkeyup = function(start) {
-//     var begin = document.getElementById("start");
-//     if (begin.style.display === "block") {
-//     begin.style.display = "none";
-//     } 
-//     if (begin.style.display = "none") {
-//     document.getElementById("directions"); directions.style.display = "block";
-//     }
-// }
-
-// document.onkeyup = function (event) {}
-
-// This next section is to have a song title chosen when the first key is pressed.
-
-// document.onkeyup = function(event) {
-//     songChoice = songTitles[Math.floor(Math.random() * songTitles.length)];
-// }
-
-// if (start.display === "none") {
-// document.writeln(directions);
-// }
-
-
-// when the user guesses a letter..I'll need this and more code.
