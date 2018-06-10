@@ -6,7 +6,7 @@ body {
     width: 680px;
     /* height: 555px; */
     height: 550px;
-    margin: 80 400 10 450;
+    margin: 80px 400px 10px 450px;
     padding: 10px;
     background-color: black;
     border: 5px solid red;
@@ -94,6 +94,7 @@ body {
 
 #music {
     width: 680px;
-    margin: 20 400 20 450; 
+    margin: 10px 400px 0 455px;
+    padding: 5px;
     text-align: center;
 }
