@@ -152,7 +152,7 @@ function goodTry() {
 
     if (lettersSongChoice.toString()===blanksAndSuccesses.toString()) {
         titlesCorrect++;
-        alert("You're a John Denver fan!")
+        alert("You're a John Denver fan!");
         document.getElementById("titlesDeduced").innerHTML = titlesCorrect + " Known!";
         document.getElementById("titlesUnknown").innerHTML = --titlesUnknown + (" Titles Unknown!");
         start();
@@ -181,7 +181,7 @@ document.onkeyup = function(event) {
     if (begin.style.display === "block") {
     begin.style.display = "none";
     } 
-    if (begin.style.display = "none") {
+    if (begin.style.display === "none") {
     document.getElementById("directions"); directions.style.display = "block";
         
     }
