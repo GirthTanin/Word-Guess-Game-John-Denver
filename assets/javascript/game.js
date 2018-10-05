@@ -83,7 +83,7 @@ function start() {
     //reg expression here?
 
     lettersSongChoice = songChoice.split("");
-    console.log("title is split up into its parts");
+    console.log("title is split up into its parts" + lettersSongChoice);
 
     lettersEmpty = lettersSongChoice.length;
     console.log("lettersEmpty");
@@ -96,6 +96,7 @@ function start() {
     console.log("wrongLetters inner restating");
 
     for (var i=0; i<lettersEmpty; i++) {
+        // in the future, this is where I think there needs to be a comparison to have the spaces in the titles remain as spaces, not pushed as "_".  I have at least figured out where to put the tweak.
         blanksAndSuccesses.push ("_");
     }
 console.log(blanksAndSuccesses);
@@ -141,9 +142,9 @@ function letterPresent(letter) {
 }
 
 function goodTry() {
-    document.getElementById("triesLeft").innerHTML = letterAttempts;
+    document.getElementById("triesLeft").innerHTML = "Letter Guesses Left: " + letterAttempts;
 
-    document.getElementById("lettersNotInTitle").innerHTML = wrongLetters.join(" ");
+    document.getElementById("lettersNotInTitle").innerHTML = "Letters not in song title: " + wrongLetters.join(" ");
     
 
     document.getElementById("blankTitle").innerHTML=blanksAndSuccesses.join(" ");
@@ -152,7 +153,7 @@ function goodTry() {
     if (lettersSongChoice.toString()===blanksAndSuccesses.toString()) {
         titlesCorrect++;
         alert("You're a John Denver fan!")
-        document.getElementById("titlesDeduced").innerHTML = titlesCorrect;
+        document.getElementById("titlesDeduced").innerHTML = titlesCorrect + " Known!";
         document.getElementById("titlesUnknown").innerHTML = --titlesUnknown + (" Titles Unknown!");
         start();
     }
@@ -186,5 +187,5 @@ document.onkeyup = function(event) {
     }
 
     goodTry ();
-}
+};
 
